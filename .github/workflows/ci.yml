@@ -166,26 +166,6 @@ jobs:
         continue-on-error: true
 
   # ============================================================================
-  # Code Quality
-  # ============================================================================
-  code-quality:
-    name: Code Quality Checks
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Full history for SonarCloud
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        continue-on-error: true
-
-  # ============================================================================
   # Integration Tests (Optional)
   # ============================================================================
   integration:
